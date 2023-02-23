@@ -4,6 +4,7 @@
 #include "lower.h"
 #include "upper.h"
 #include "trapezoid.h"
+#include "checkerboard.h"
 int main(){
     std::string result;
     result = box(3,5);
@@ -24,6 +25,14 @@ int main(){
     std::cout << "\n------------------\n";
     result = trapezoid(12,5);
     std::cout << "trapezoid(12,5):\n";
+    std::cout << result;
+    std::cout << "\n------------------\n";
+    result = trapezoid(12,7);
+    std::cout << "trapezoid(12,7):\n";
+    std::cout << result;
+    std::cout << "\n------------------\n";
+    result = checkerboard(11,6);
+    std::cout << "checkerboard(11,6):\n";
     std::cout << result;
     std::cout << "\n------------------\n";
     return 0;
