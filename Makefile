@@ -1,7 +1,9 @@
-main: main.o box.o cross.o lower.o upper.o
-	g++ -o main main.o box.o cross.o lower.o upper.o
+OBJECTS = main.o box.o cross.o lower.o upper.o trapezoid.o
 
-main.o: main.cpp box.h cross.o lower.h upper.o
+main: $(OBJECTS)
+	g++ -o main $(OBJECTS)
+
+main.o: main.cpp box.h cross.h lower.h upper.h trapezoid.h
 	g++ -c main.cpp
 
 box.o: box.cpp box.h 
@@ -16,5 +18,8 @@ lower.o: lower.cpp lower.h
 upper.o: upper.cpp upper.h
 	g++ -c upper.cpp
 
+trapezoid.o: trapezoid.cpp trapezoid.h
+	g++ -c trapezoid.cpp
+
 clean:
-	rm -f main.o box.o cross.o lower.o upper.o
+	rm -f main.o $(OBJECTS)
