@@ -5,6 +5,7 @@ std::string checkerboard3x3(int width, int height){
     std::string keys[2];
     std::string result;
     int row_count = width;
+    int col_count = height;
     while(row_count>0){
         for(int i=0;i<3;i++){
             temp+="*";
@@ -31,16 +32,25 @@ std::string checkerboard3x3(int width, int height){
     }
     temp=temp.substr(0,width);
     keys[1]=temp;
-    while(height>0){
+    while(col_count>0){
         for(int k=0;k<3;k++){
             result+=keys[0];
             result+="\n";
-            height-=1;
+            col_count-=1;
+            if(col_count<1){
+                break;
+            }
         }
-        for(int k=0;k<3;k++){
+        if(col_count<1){
+                break;
+            }
+        for(int l=0;l<3;l++){
             result+=keys[1];
             result+="\n";
-            height-=1;
+            col_count-=1;
+            if(col_count<1){
+                break;
+            }
         }
     }
     return result;
