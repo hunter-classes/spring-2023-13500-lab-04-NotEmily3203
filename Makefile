@@ -1,4 +1,4 @@
-OBJECTS = main.o box.o cross.o lower.o upper.o trapezoid.o checkerboard.o
+OBJECTS = main.o box.o cross.o lower.o upper.o trapezoid.o checkerboard.o checkerboard3x3.o
 
 main: $(OBJECTS)
 	g++ -o main $(OBJECTS)
@@ -23,6 +23,9 @@ upper.o: upper.cpp upper.h
 
 trapezoid.o: trapezoid.cpp trapezoid.h
 	g++ -c trapezoid.cpp
+
+checkerboard3x3.o: checkerboard3x3.cpp checkerboard3x3.h
+	g++ -c checkerboard3x3.cpp
 
 clean:
 	rm -f main.o $(OBJECTS)
