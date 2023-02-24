@@ -10,14 +10,12 @@ std::string checkerboard3x3(int width, int height){
             temp+="*";
             row_count-=1;
         }
-        if(row_count<=0){
-            break;
-        }
         for(int j=0;j<3;j++){
             temp+=" ";
             row_count-=1;
         }
     }
+    temp=temp.substr(0,width);
     keys[0]=temp;
     temp="";
     row_count = width;
@@ -26,14 +24,12 @@ std::string checkerboard3x3(int width, int height){
             temp+=" ";
             row_count-=1;
         }
-        if(row_count<=0){
-            break;
-        }
         for(int j=0;j<3;j++){
             temp+="*";
             row_count-=1;
         }
     }
+    temp=temp.substr(0,width);
     keys[1]=temp;
     while(height>0){
         for(int k=0;k<3;k++){
